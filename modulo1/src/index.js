@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import React, { Component } from 'react';
+import {
+  Platform, StyleSheet, Text, View, Button,
+} from 'react-native';
+import Todo from './components/Todo';
+import './config/ReactotronConfig';
 
-import Todo from "./components/Todo";
-import "./config/ReactotronConfig";
-
-console.tron.log("Hello World");
+console.tron.log('Hello World');
 
 export default class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        text: "Hello World"
+        text: 'Hello World',
       });
     }, 3000);
   }
@@ -33,16 +34,13 @@ export default class App extends Component {
 
   state = {
     counter: 0,
-    usuario: "Marlon",
-    todos: [
-      { id: 1, text: "Fazer café" },
-      { id: 2, text: "Estudar o GoNative" }
-    ]
+    usuario: 'Marlon',
+    todos: [{ id: 1, text: 'Fazer café' }, { id: 2, text: 'Estudar o GoNative' }],
   };
 
   addTodo = () => {
     this.setState({
-      todos: [...this.state.todos, { id: Math.random(), text: "Novo todo" }]
+      todos: [...this.state.todos, { id: Math.random(), text: 'Novo todo' }],
     });
   };
 
@@ -64,8 +62,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
 });
