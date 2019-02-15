@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
 
 import Todo from "./components/Todo";
+import "./config/ReactotronConfig";
+
+console.tron.log("Hello World");
 
 export default class App extends Component {
   componentDidMount() {
