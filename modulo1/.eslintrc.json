@@ -16,5 +16,12 @@
   },
   "globals": {
     "__DEV__": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        "rootPathSuffix": "src"
+      }
+    }
   }
 }

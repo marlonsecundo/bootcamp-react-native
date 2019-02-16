@@ -5,7 +5,7 @@ if (__DEV__) {
     .useReactNative() // add all built-in react native plugins
     .connect(); // let's connect!
 
-  console.tron = tron;
+  console.tron = tron ;
 
   tron.clear();
 }
