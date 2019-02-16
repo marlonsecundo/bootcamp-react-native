@@ -3,7 +3,9 @@ import {
   Platform, StyleSheet, Text, View, Button,
 } from 'react-native';
 import Todo from '~/components/Todo';
+
 import './config/ReactotronConfig';
+import './config/DevToolsConfig';
 
 console.tron.log('Hello World');
 

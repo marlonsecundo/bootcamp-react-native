@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "react-devtool": "react-devtools"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "16.6.3",
+    "react-devtools": "^3.6.0",
     "react-native": "0.58.4",
     "reactotron-react-native": "^2.1.5"
   },
