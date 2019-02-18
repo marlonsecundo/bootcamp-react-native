@@ -19,7 +19,13 @@
   },
   "plugins": ["react"],
   "rules": {
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".js"]
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
