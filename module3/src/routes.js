@@ -2,6 +2,8 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import { Main, Favorites } from '~/pages';
 
+import { colors } from './styles';
+
 const Routes = createAppContainer(
   createStackNavigator(
     {
@@ -10,7 +12,10 @@ const Routes = createAppContainer(
     },
     {
       defaultNavigationOptions: {
-        headerStyle: {},
+        headerStyle: {
+          backgroundColor: colors.primaryDark,
+        },
+        headerTintColor: colors.white,
         headerBackTitle: null,
       },
     },

@@ -2,9 +2,10 @@
   "parser": "babel-eslint",
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:react-native/all"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
@@ -17,7 +18,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react-native", "jsx-a11y", "import"],
   "rules": {
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": [

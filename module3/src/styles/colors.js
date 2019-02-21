@@ -1,3 +1,5 @@
+import Color from 'color';
+
 export default {
   white: '#FFF',
   lighter: '#EEE',
@@ -7,12 +9,13 @@ export default {
   darker: '#333',
   black: '#000',
 
-  primary: '#7A91CA',
+  primary: '#5b45ad',
+  primaryDark: Color('#5b45ad').darken(0.1),
   secundary: '#444A5A',
   success: '#9DCA83',
   danger: '#E37A7A',
 
   transparent: 'transparent',
-  darkTransparent: 'rbga(0,0,0,0.6)',
-  whiteTransparent: 'rbga(255, 255, 255, 0.3)',
+  darkTransparent: 'rgba(0,0,0,0.6)',
+  whiteTransparent: 'rgba(255, 255, 255, 0.3)',
 };
