@@ -31,7 +31,7 @@ class Favorites extends Component {
     const { favorites } = this.props;
     return (
       <View style={styles.container}>
-        {!favorites.length ? (
+        {!favorites.data.length ? (
           <Text style={styles.empty}>Nenhum favorito adicionado</Text>
         ) : (
           this.renderList()

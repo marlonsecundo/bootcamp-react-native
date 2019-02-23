@@ -52,6 +52,15 @@ const styles = StyleSheet.create({
   footer: {
     paddingBottom: metrics.basePadding,
   },
+  error: {
+    fontWeight: 'bold',
+    color: colors.danger,
+    alignSelf: 'center',
+    marginBottom: metrics.baseMargin,
+  },
+  loading:{
+    color: colors.darkTransparent,
+  },
   footerLink: {
     color: colors.white,
     fontWeight: 'bold',
