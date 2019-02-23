@@ -19,6 +19,8 @@ class Main extends Component {
     navigation: PropTypes.shape({
       navigate: PropTypes.func,
     }).isRequired,
+    addFavoriteRequest: PropTypes.func.isRequired,
+    favoritesCount: PropTypes.number.isRequired,
   };
 
   state = {
@@ -28,7 +30,7 @@ class Main extends Component {
   addRepository = () => {
     if (!this.state.repositoryInput.length) return;
 
-    this.props.addRavoriteRequest(this.state.repositoryInput);
+    this.props.addFavoriteRequest(this.state.repositoryInput);
   };
 
   navigateToFavorites = () => {
@@ -36,7 +38,6 @@ class Main extends Component {
   };
 
   render() {
-    console.tron.log(this.props);
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -67,7 +68,7 @@ class Main extends Component {
         </View>
         <View style={styles.footer}>
           <TouchableOpacity onPress={this.navigateToFavorites}>
-            <Text style={styles.footerLink}>Meus Favoritos</Text>
+            <Text style={styles.footerLink}>Meus Favoritos ({this.props.favoritesCount})</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -75,6 +76,10 @@ class Main extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  favoritesCount: state.favorites.length,
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators(FavoriteActions, dispatch);
 
-export default connect(null, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

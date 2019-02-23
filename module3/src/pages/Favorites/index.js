@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import { View, Text } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { View, Text, FlatList } from 'react-native';
+import { connect } from 'react-redux';
 import FavoriteItem from './components/FavoriteItem';
 import styles from './styles';
 
-export default class Favorites extends Component {
+class Favorites extends Component {
   static navigationOptions = {
     title: 'Meus Favoritos',
   };
 
-  state = {
-    favorites: [],
+  static propTypes = {
+    favorites: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+      }),
+    ).isRequired,
   };
 
   renderList = () => (
     <FlatList
-      data={this.state.favorites}
+      data={this.props.favorites}
       keyExtractor={item => String(item.id)}
       renderItem={({ item }) => <FavoriteItem favorite={item} />}
     />
   );
 
   render() {
-    const { favorites } = this.state;
+    const { favorites } = this.props;
     return (
       <View style={styles.container}>
         {!favorites.length ? (
@@ -35,3 +40,9 @@ export default class Favorites extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  favorites: state.favorites,
+});
+
+export default connect(mapStateToProps)(Favorites);
