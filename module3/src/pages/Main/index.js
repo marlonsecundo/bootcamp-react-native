@@ -12,7 +12,7 @@ import {
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as FavoriteActions from '~/store/actions/favorites';
+import { Creators as FavoriteActions } from '~/store/ducks/favorites';
 
 import styles from './styles';
 
