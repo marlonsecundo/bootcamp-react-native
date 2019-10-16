@@ -21,7 +21,7 @@ class Favorites extends Component {
 
   renderList = () => (
     <FlatList
-      data={this.props.favorites}
+      data={this.props.favorites.data}
       keyExtractor={item => String(item.id)}
       renderItem={({ item }) => <FavoriteItem favorite={item} />}
     />
